@@ -17,7 +17,9 @@ const Navigation = () => {
       </div>
       <div className='top-bar-right'>
         <ul className='menu'>
-          <li className='menu-text'>Created by: Pedro Miguel Curado</li>
+          <li className='menu-text'>
+            Created by <Link to='/' target='_blank'>Pedro Miguel Curado</Link>
+          </li>
         </ul>
       </div>
     </div>
