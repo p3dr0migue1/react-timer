@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+
+// local imports
+import Navigation from 'Navigation';
 
 var Main = (props) => {
   return (
     <div>
+      <Navigation/>
       <div>
         <div>
-          Rendered!!
           {props.children}
         </div>
       </div>
