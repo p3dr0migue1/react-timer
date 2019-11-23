@@ -17,7 +17,7 @@ describe('Clock', () => {
       const $el = $(ReactDom.findDOMNode(clock));
       const actualText = $el.find('.clock-text').text();
 
-      expect(actual).toBe('01:02');
+      expect(actualText).toBe('01:02');
     });
   });
 
