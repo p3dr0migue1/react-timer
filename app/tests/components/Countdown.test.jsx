@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
 import $ from 'jquery';
@@ -35,6 +34,28 @@ describe('Countdown', () => {
         expect(countdown.state.count).toBe(0);
         done();
       }, 3001);
+    });
+
+    it('should pause countdown on paused status', (done) => {
+      const countdown = TestUtils.renderIntoDocument(<Countdown/>);
+      countdown.handleSetCountdown(3);
+      countdown.handleStatusChange('paused');
+
+      // wait 1 second
+      setTimeout(() => {
+        expect(countdown.state.count).toBe(3);
+        expect(countdown.state.countdownStatus).toBe('paused');
+        done();
+      }, 1001);
+    });
+
+    it('should reset count on stopped status', () => {
+      const countdown = TestUtils.renderIntoDocument(<Countdown/>);
+      countdown.handleSetCountdown(3);
+      countdown.handleStatusChange('stopped');
+
+      expect(countdown.state.count).toBe(0);
+      expect(countdown.state.countdownStatus).toBe('stopped');
     });
   });
 });
