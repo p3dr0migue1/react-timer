@@ -2,13 +2,23 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import expect from 'expect';
-// import $ from 'jQuery';
+import $ from 'jquery';
 
 import Clock from 'Clock';
 
 describe('Clock', () => {
   it('should exist', () => {
     expect(Clock).toExist();
+  });
+
+  describe('render', () => {
+    it('should render clock to output', () => {
+      const clock = TestUtils.renderIntoDocument(<Clock totalSeconds={62} />);
+      const $el = $(ReactDom.findDOMNode(clock));
+      const actualText = $el.find('.clock-text').text();
+
+      expect(actual).toBe('01:02');
+    });
   });
 
   describe('formatSeconds', () => {
