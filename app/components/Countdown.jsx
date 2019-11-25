@@ -12,10 +12,6 @@ const Countdown = React.createClass({
     };
   },
 
-  componentDidMount() {
-
-  },
-
   componentDidUpdate(prevProps, prevState) {
     if (this.state.countdownStatus !== prevState.countdownStatus) {
       switch(this.state.countdownStatus) {
